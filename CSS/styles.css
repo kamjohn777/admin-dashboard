@@ -1,10 +1,4 @@
- /* Customize the sidebar */
- .ui.sidebar {
-    width: 300px !important; /* Width when active */
-}
-.ui.sidebar.slim {
-    width: 50px !important; /* Width when not active */
-}
+
 .ui.sidebar > .item {
     font-size: 1.5em; /* Adjust as needed */
 }
@@ -13,11 +7,18 @@
 }
 
 
-
+.ui.grid {
+    margin: 0 !important;
+}
 
 /* Make the navbar fit the width of the browser */
+/* Add a transition to the width property */
+#mainContent {
+    transition: width 0.5s ease-in-out;
+}
+
 #mainContent .ui.menu {
-    width: 100vw;
+    width: 100%;
     margin-left: 0;
     margin-right: 0;
 }

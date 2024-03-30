@@ -1,15 +1,16 @@
 $('.ui.sidebar').sidebar({
     dimPage: false,
     onVisible: function() {
-        $('#mainContent').css('padding-left', '300px'); // Width of the open sidebar
+        // Adjust the width when the sidebar is open
+        // $('#mainContent').css('width', 'calc(100% - 300px)'); 
+        $('#mainContent').css('width', 'calc(100% - 260px)');
     },
     onHidden: function() {
-        $('#mainContent').css('padding-left', '100px'); // Width of the closed sidebar
+        $('#mainContent').css('width', '100%'); // Adjust the width when the sidebar is closed
     }
 });
 
 // JavaScript to handle the button click event to toggle the sidebar
 $('#toggleSidebar').on('click', function() {
-    // $('.ui.sidebar').toggleClass('slim');
     $('.ui.sidebar').sidebar('toggle');
 });
