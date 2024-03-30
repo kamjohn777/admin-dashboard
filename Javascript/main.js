@@ -14,3 +14,20 @@ $('.ui.sidebar').sidebar({
 $('#toggleSidebar').on('click', function() {
     $('.ui.sidebar').sidebar('toggle');
 });
+
+
+$(document).ready(function() {
+    $.getJSON('../users.json', function(users) {
+        var $tableBody = $('.ui.table tbody');
+        $.each(users, function(i, user) {
+            var $tr = $('<tr>').append(
+                $('<td>').text(user.name),
+                $('<td>').text(user.email),
+                $('<td>').text(user.userType),
+                $('<td>').text(user.joined),
+                $('<td>').text(user.status)
+            );
+            $tableBody.append($tr);
+        });
+    });
+});
