@@ -1,0 +1,28 @@
+ /* Customize the sidebar */
+ .ui.sidebar {
+    width: 300px !important; /* Width when active */
+}
+.ui.sidebar.slim {
+    width: 50px !important; /* Width when not active */
+}
+.ui.sidebar > .item {
+    font-size: 1.5em; /* Adjust as needed */
+}
+.ui.sidebar.slim > .item {
+    font-size: 0; /* Hide text when not active */
+}
+
+
+
+
+/* Make the navbar fit the width of the browser */
+#mainContent .ui.menu {
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Make the navbar items align to the right */
+#mainContent .ui.menu .item {
+    margin-left: auto;
+}
