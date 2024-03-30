@@ -1,29 +1,54 @@
-
+/* STYLES FOR SIDEBAR ITEMS */
 .ui.sidebar > .item {
-    font-size: 1.5em; /* Adjust as needed */
+  font-size: 1.5em; /* Adjust as needed */
 }
 .ui.sidebar.slim > .item {
-    font-size: 0; /* Hide text when not active */
+  font-size: 0; /* Hide text when not active */
 }
 
-
+/* STYLES FOR GRID */
 .ui.grid {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
-/* Make the navbar fit the width of the browser */
-/* Add a transition to the width property */
+/* STYLES FOR NAVBAR */
+.ui.menu .item:first-child {
+  flex-grow: 1;
+}
+
+/* STYLES FOR MAIN CONTENT */
 #mainContent {
-    transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out; /* Add a transition to the width property */
 }
 
 #mainContent .ui.menu {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+  width: 100%; /* Make the navbar fit the width of the browser */
+  margin-left: 0;
+  margin-right: 0;
 }
 
-/* Make the navbar items align to the right */
 #mainContent .ui.menu .item {
-    margin-left: auto;
+  margin-left: auto; /* Make the navbar items align to the right */
+}
+
+/* STYLES FOR CARDS IN THE UI THREE CARDS CONTAINER */
+.ui.three.cards .card {
+  width: 30%;
+  min-height: 220px;
+  padding: 20px;
+  background: linear-gradient(to left, #b576f6, #9a4fe9);
+  border-radius: 10px;
+  color: #fff;
+}
+
+.ui.three.cards .card:nth-child(2) {
+    background: linear-gradient(to left, #6AA5E3, #6866e9);
+}
+
+.ui.three.cards .card:nth-child(3) {
+    background: linear-gradient(to left, #feb683, #ff8993);
+}
+
+.ui.three.cards .card {
+    
 }

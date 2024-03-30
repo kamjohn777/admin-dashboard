@@ -30,4 +30,12 @@ $(document).ready(function() {
             $tableBody.append($tr);
         });
     });
+
+    // Search functionality
+    $('input[type="text"]').on('keyup', function() {
+        var value = $(this).val().toLowerCase();
+        $(".ui.table tbody tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 });
