@@ -28,6 +28,11 @@ $(document).ready(function() {
                 $('<td>').text(user.status)
             );
             $tableBody.append($tr);
+            if (user.status === 'Active') {
+                $tr.addClass('positive');
+            } else if (user.status === 'Inactive') {
+                $tr.addClass('negative');
+            }
         });
     });
 

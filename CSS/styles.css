@@ -6,6 +6,36 @@
   font-size: 0; /* Hide text when not active */
 }
 
+.ui.sidebar.inverted.vertical.menu {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.ui.sidebar.inverted.vertical.menu > div {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ui.sidebar.inverted.vertical.menu > div:hover {
+    background-color: purple;
+}
+
+.ui.sidebar.inverted.vertical.menu > div > i,
+.ui.sidebar.inverted.vertical.menu > div > a {
+    color: black;
+    font-size: 1.5rem;
+}
+
+.ui.sidebar.inverted.vertical.menu > div:hover > i,
+.ui.sidebar.inverted.vertical.menu > div:hover > a {
+    color: white;
+}
+
 /* STYLES FOR GRID */
 .ui.grid {
   margin: 0 !important;
@@ -75,8 +105,8 @@
     justify-content: flex-end;
 }
 
-.ui.three.cards .card {
-    
+.ui.three.cards  {
+    margin-top: 30px;
 }
 
 .ui.three.cards .card .content .header,
@@ -114,4 +144,18 @@
 .ui.three.cards .card .content .description,
 .ui.three.cards .card .content .meta {
     font-size: 1em; /* Adjust as needed */
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+
+.ui.sidebar.inverted.vertical.menu > div {
+    display: flex;
+    align-items: center;
 }
