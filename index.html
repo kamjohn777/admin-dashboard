@@ -1,162 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="./CSS/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-</head>
-<body>
-   
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+  </head>
+  <body>
     <div class="pushable">
-         <!-- Sidebar -->
-         <div class="ui sidebar inverted vertical menu">
-            <div>
-                <h2>Logo</h2>
-            </div>
-            <div>
-                <i class="dashboard icon"></i><a class="item">Dashboard</a>
-            </div>
-            <div>
-                <i class="th large icon"></i><a class="item">Ui Elements</a>
-            </div>
-            <div>
-                <i class="wpforms icon"></i><a class="item">Forms Stuff</a>
-            </div>
-            <div>
-                <i class="table icon"></i><a class="item">Data Table</a>
-            </div>
-            <div>
-                <i class="chart line icon"></i><a class="item">Chart</a>
-            </div>
-            <div>
-                <i class="cogs icon"></i><a class="item">Components</a>
-            </div>
-            <div>
-                <i class="sign-out icon"></i><a class="item">Log Out</a>
-            </div>
+      <!-- Sidebar -->
+      <div class="ui sidebar inverted vertical menu">
+        <div>
+          <h2>Logo</h2>
         </div>
+        <div><i class="dashboard icon"></i><a class="item">Dashboard</a></div>
+        <div><i class="th large icon"></i><a class="item">Ui Elements</a></div>
+        <div><i class="wpforms icon"></i><a class="item">Forms Stuff</a></div>
+        <div><i class="table icon"></i><a class="item">Data Table</a></div>
+        <div><i class="chart line icon"></i><a class="item">Chart</a></div>
+        <div><i class="cogs icon"></i><a class="item">Components</a></div>
+        <div><i class="sign-out icon"></i><a class="item">Log Out</a></div>
+      </div>
 
-    <!-- Main content -->
-    <div class="pusher" id="mainContent">
+      <!-- Main content -->
+      <div class="pusher" id="mainContent">
         <div class="ui grid">
-            <!-- Navbar -->
-<div class="ui menu">
-    <!-- Search bar -->
-    <div class="item">
-        <div class="ui left icon input">
-            <input type="text" placeholder="Search...">
-            <i class="search icon"></i>
-        </div>
-    </div>
+          <!-- Navbar -->
+          <div class="ui menu">
+            <!-- Search bar -->
+            <div id="navbar-search-wrap" class="item">
+              <div class="ui left icon input">
+                <input id="navbar-search" type="text" placeholder="Search..." />
+                <i class="search icon"></i>
+              </div>
+            </div>
 
-    <!-- Spacer -->
-    <div id="spacer" class="item" style="flex-grow: 1;"></div>
+            <!-- Spacer -->
+            <div id="spacer" class="item" style="flex-grow: 1"></div>
 
-    <!-- Profile picture and name -->
-    <div id="navbar-image-container" class="item">
-        <img class="ui avatar image" src="https://media.licdn.com/dms/image/D5603AQGrvyvgqZjNQA/profile-displayphoto-shrink_800_800/0/1685326789461?e=2147483647&v=beta&t=XP1VbPJ5r3LWQgAQYQlpSh7ht74Cj5DB54eTWgcmjD8" alt="Profile Picture">
-        <span>Kameron Johnson</span>
-    </div>
+            <!-- Profile picture and name -->
+            <div id="navbar-image-container" class="item">
+              <img
+                class="ui avatar image"
+                src="https://media.licdn.com/dms/image/D5603AQGrvyvgqZjNQA/profile-displayphoto-shrink_800_800/0/1685326789461?e=2147483647&v=beta&t=XP1VbPJ5r3LWQgAQYQlpSh7ht74Cj5DB54eTWgcmjD8"
+                alt="Profile Picture"
+              />
+              <span>Kameron Johnson</span>
+            </div>
 
-    <!-- Notifications icon -->
-    <a class="item">
-        <i class="bell outline icon"></i>
-    </a>
+            <!-- Notifications icon -->
+            <a class="item">
+              <i class="bell outline icon"></i>
+            </a>
 
-    <!-- Alert icon -->
-    <a class="item">
-        <i class="exclamation circle icon"></i>
-    </a>
+            <!-- Alert icon -->
+            <a class="item">
+              <i class="exclamation circle icon"></i>
+            </a>
 
-    <!-- Hamburger icon -->
-    <a class="item" id="toggleSidebar">
-        <i class="sidebar icon"></i>
-    </a>
+            <!-- Hamburger icon -->
+            <a class="item" id="toggleSidebar">
+              <i class="sidebar icon"></i>
+            </a>
 
+            <!-- Sign In Modal -->
+            <div class="ui modal" id="signInModal">
+              <i class="close icon"></i>
+              <div class="header">Sign In</div>
+              <div class="content">
+                <div class="ui form">
+                  <div class="field">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Username" />
+                  </div>
+                  <div class="field">
+                    <label>Password</label>
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="actions">
+                <div class="ui button cancel">Cancel</div>
+                <div class="ui button ok">Sign In</div>
+              </div>
+            </div>
 
-    <!-- Sign In Modal -->
-<div class="ui modal" id="signInModal">
-    <i class="close icon"></i>
-    <div class="header">
-      Sign In
-    </div>
-    <div class="content">
-      <div class="ui form">
-        <div class="field">
-          <label>Username</label>
-          <input type="text" name="username" placeholder="Username">
-        </div>
-        <div class="field">
-          <label>Password</label>
-          <input type="password" name="password" placeholder="Password">
+            <!-- Sign Out Button -->
+            <button class="ui button" id="signOutButton" style="display: none">
+              Sign Out
+            </button>
+          </div>
+
+          <!-- Content -->
+          <div id="media_container_id" class="ui container">
+            <!-- Cards -->
+            <div id="tre-card-container" class="ui three cards">
+              <div class="card">
+                <div class="content">
+                  <i class="large warehouse icon"></i>
+                  <!-- Icon for Total Stock -->
+                  <div class="header margin-class">Total Stock</div>
+                  <div class="description">$160,000</div>
+                  <div class="meta">Increased by 70%</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="content">
+                  <i class="large dollar sign icon"></i>
+                  <!-- Icon for Total Profit -->
+                  <div class="header margin-class">Total Profit</div>
+                  <div class="description">$70,000</div>
+                  <div class="meta">Increased by 40%</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="content">
+                  <i class="large users icon"></i>
+                  <!-- Icon for Unique Visitors -->
+                  <div class="header margin-class">Unique Visitors</div>
+                  <div class="description">25,000</div>
+                  <div class="meta">Increased by 30%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role in Company section -->
+            <h2 class="ui header">Role in Company</h2>
+            <table class="ui celled table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>User Type</th>
+                  <th>Joined</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Add rows here -->
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="actions">
-      <div class="ui button cancel">Cancel</div>
-      <div class="ui button ok">Sign In</div>
-    </div>
-  </div>
-  
-  <!-- Sign Out Button -->
-  <button class="ui button" id="signOutButton" style="display: none;">Sign Out</button>
-</div>
-
-           <!-- Content -->
-<div id="media_container_id" class="ui container">
-    <!-- Cards -->
-    <div id="tre-card-container" class="ui three cards">
-        <div class="card">
-            <div class="content">
-                <i class="large warehouse icon"></i> <!-- Icon for Total Stock -->
-                <div class="header margin-class">Total Stock</div>
-                <div class="description">$160,000</div>
-                <div class="meta">Increased by 70%</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <i class="large dollar sign icon"></i> <!-- Icon for Total Profit -->
-                <div class="header margin-class">Total Profit</div>
-                <div class="description">$70,000</div>
-                <div class="meta">Increased by 40%</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <i class="large users icon"></i> <!-- Icon for Unique Visitors -->
-                <div class="header margin-class">Unique Visitors</div>
-                <div class="description">25,000</div>
-                <div class="meta">Increased by 30%</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Role in Company section -->
-    <h2 class="ui header">Role in Company</h2>
-    <table class="ui celled table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>User Type</th>
-                <th>Joined</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Add rows here -->
-        </tbody>
-    </table>
-</div>
-        </div>
-    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="./Javascript/main.js"></script>
-</body>
+  </body>
 </html>
