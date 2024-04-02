@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="./CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
@@ -12,6 +12,9 @@
     <div class="pushable">
          <!-- Sidebar -->
          <div class="ui sidebar inverted vertical menu">
+            <div>
+                <h2>Logo</h2>
+            </div>
             <div>
                 <i class="dashboard icon"></i><a class="item">Dashboard</a>
             </div>
@@ -49,12 +52,12 @@
     </div>
 
     <!-- Spacer -->
-    <div class="item" style="flex-grow: 1;"></div>
+    <div id="spacer" class="item" style="flex-grow: 1;"></div>
 
     <!-- Profile picture and name -->
-    <div class="item">
-        <img class="ui avatar image" src="profile_picture_url" alt="Profile Picture">
-        <span>Username</span>
+    <div id="navbar-image-container" class="item">
+        <img class="ui avatar image" src="https://media.licdn.com/dms/image/D5603AQGrvyvgqZjNQA/profile-displayphoto-shrink_800_800/0/1685326789461?e=2147483647&v=beta&t=XP1VbPJ5r3LWQgAQYQlpSh7ht74Cj5DB54eTWgcmjD8" alt="Profile Picture">
+        <span>Kameron Johnson</span>
     </div>
 
     <!-- Notifications icon -->
@@ -71,12 +74,40 @@
     <a class="item" id="toggleSidebar">
         <i class="sidebar icon"></i>
     </a>
+
+
+    <!-- Sign In Modal -->
+<div class="ui modal" id="signInModal">
+    <i class="close icon"></i>
+    <div class="header">
+      Sign In
+    </div>
+    <div class="content">
+      <div class="ui form">
+        <div class="field">
+          <label>Username</label>
+          <input type="text" name="username" placeholder="Username">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Password">
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui button cancel">Cancel</div>
+      <div class="ui button ok">Sign In</div>
+    </div>
+  </div>
+  
+  <!-- Sign Out Button -->
+  <button class="ui button" id="signOutButton" style="display: none;">Sign Out</button>
 </div>
 
            <!-- Content -->
-<div class="ui container">
+<div id="media_container_id" class="ui container">
     <!-- Cards -->
-    <div class="ui three cards">
+    <div id="tre-card-container" class="ui three cards">
         <div class="card">
             <div class="content">
                 <i class="large warehouse icon"></i> <!-- Icon for Total Stock -->
